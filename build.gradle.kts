@@ -2,18 +2,18 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.25"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.9.25"
     id("com.google.devtools.ksp") version "1.9.25-1.0.20"
-    id("groovy") 
+    id("groovy")
     id("io.micronaut.application") version "4.5.3"
     id("com.gradleup.shadow") version "8.3.6"
     id("org.asciidoctor.jvm.convert") version "3.3.2"
     id("io.micronaut.aot") version "4.5.3"
 }
 
-version = "0.1"
+version = project.properties["zendesk4jVersion"]!!
 group = "lol.pbu"
 
-apply(from="gradle/asciidoc.gradle")
-val kotlinVersion=project.properties.get("kotlinVersion")
+apply(from = "gradle/asciidoc.gradle")
+val kotlinVersion = project.properties["kotlinVersion"]
 repositories {
     mavenCentral()
 }
