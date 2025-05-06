@@ -3,7 +3,7 @@ micronaut:
     name: zendesk4j
   http:
     services:
-      Zendesk:
+      zendesk:
         url: # MICRONAUT_HTTP_SERVICES_ZENDESK_URL
         email: # MICRONAUT_HTTP_SERVICES_ZENDESK_EMAIL
         token: # MICRONAUT_HTTP_SERVICES_ZENDESK_TOKEN

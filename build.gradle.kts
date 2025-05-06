@@ -1,5 +1,6 @@
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.9.25"
+//    id("io.micronaut.openapi") version "4.5.3"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.9.25"
     id("com.google.devtools.ksp") version "1.9.25-1.0.20"
     id("groovy")
@@ -19,8 +20,10 @@ repositories {
 }
 
 dependencies {
+    annotationProcessor("io.micronaut.validation:micronaut-validation-processor")
     ksp("io.micronaut.data:micronaut-data-processor")
     ksp("io.micronaut:micronaut-http-validation")
+    implementation("io.micronaut.reactor:micronaut-reactor-http-client")
     ksp("io.micronaut.serde:micronaut-serde-processor")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut.data:micronaut-data-jdbc")
@@ -30,6 +33,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("org.slf4j:jul-to-slf4j")
+    implementation("io.micronaut.validation:micronaut-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     runtimeOnly("com.h2database:h2")
@@ -68,6 +72,12 @@ micronaut {
         optimizeNetty = true
         replaceLogbackXml = true
     }
+//    openapi {
+//        client(file("src/docs/asciidoc/oas.yaml")) {
+//            apiPackageName = "lol.pbu.zendesk.api"
+//            modelPackageName = "lol.pbu.zendesk.model"
+//        }
+//    }
 }
 
 
