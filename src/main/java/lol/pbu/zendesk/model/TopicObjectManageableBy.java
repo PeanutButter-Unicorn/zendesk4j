@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * The set of users who can manage this topic.
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 public enum TopicObjectManageableBy {

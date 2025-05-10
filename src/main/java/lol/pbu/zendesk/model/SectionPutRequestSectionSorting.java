@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * Defines the type of sorting used in this section
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 public enum SectionPutRequestSectionSorting {

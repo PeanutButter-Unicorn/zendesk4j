@@ -10,6 +10,9 @@ import java.util.Objects;
 
 /**
  * ArticleAttachmentObject
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder({
@@ -108,7 +111,9 @@ public class ArticleAttachmentObject {
     private Integer id;
 
     /**
-     * The attached file is shown in the admin interface for inline attachments. Its URL can be referenced in the article&#39;s HTML body. Inline attachments are image files directly embedded in the article body. If false, the attachment is listed in the list of attachments. The default value is false
+     * The attached file is shown in the admin interface for inline attachments. Its URL can be referenced in the
+     * article&#39;s HTML body. Inline attachments are image files directly embedded in the article body. If false,
+     * the attachment is listed in the list of attachments. The default value is false
      */
     @Nullable
     @JsonProperty(JSON_PROPERTY_INLINE)

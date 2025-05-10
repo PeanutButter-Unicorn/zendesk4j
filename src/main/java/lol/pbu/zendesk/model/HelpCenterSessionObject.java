@@ -10,6 +10,9 @@ import java.util.Objects;
 
 /**
  * HelpCenterSessionObject
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(HelpCenterSessionObject.JSON_PROPERTY_CSRF_TOKEN)

@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * VotesResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(VotesResponse.JSON_PROPERTY_VOTES)

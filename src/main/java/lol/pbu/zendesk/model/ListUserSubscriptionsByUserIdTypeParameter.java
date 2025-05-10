@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * Gets or Sets ListUserSubscriptionsByUserId_type_parameter
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 public enum ListUserSubscriptionsByUserIdTypeParameter {

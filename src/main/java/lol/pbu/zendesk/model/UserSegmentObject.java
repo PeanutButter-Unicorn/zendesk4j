@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * The &#x60;user_type&#x60; attribute takes one of the following values:  | Value               | Users                                | |---------------------|--------------------------------------| | signed_in_users     | only authenticated users             | | staff               | only agents and Help Center managers |   For &#x60;group_ids&#x60;, &#x60;organization_ids&#x60;, &#x60;tags&#x60;, and &#x60;or_tags&#x60;, an empty array means that access is not restricted by the attribute. For example, if no group ids are specified, then users don&#39;t have to be in any specific group to have access.  For &#x60;tags&#x60;, a user must have all the listed tags to have access. For &#x60;or_tags&#x60;, a user must have at least one of the listed tags to have access.
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder({

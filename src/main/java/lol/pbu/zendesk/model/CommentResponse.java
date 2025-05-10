@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * CommentResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(CommentResponse.JSON_PROPERTY_COMMENT)

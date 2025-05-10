@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * UserSegmentsResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(UserSegmentsResponse.JSON_PROPERTY_USER_SEGMENTS)

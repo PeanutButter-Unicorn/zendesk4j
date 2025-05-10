@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * ContentSubscriptionsResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(ContentSubscriptionsResponse.JSON_PROPERTY_SUBSCRIPTIONS)

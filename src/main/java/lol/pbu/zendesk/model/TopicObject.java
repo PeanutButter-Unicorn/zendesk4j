@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * The &#x60;manageable_by&#x60; attribute takes one of the following values:  | Value     | Users                       | |-----------|---------------------------- | | staff     | agents and managers         | | managers  | only Help Center managers   |  Note that &#x60;manageable_by&#x60; is only displayed to users who can manage the topic.
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder({

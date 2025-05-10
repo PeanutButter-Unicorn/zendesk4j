@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * ArticleObject
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder({
@@ -82,7 +85,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      */
     @NotNull
     @JsonProperty(JSON_PROPERTY_PERMISSION_GROUP_ID)
-    private Integer permissionGroupId;
+   private Long permissionGroupId;
 
     /**
      * The title of the article
@@ -97,10 +100,12 @@ public class ArticleObject implements SearchObjectResultsInner {
     @Nullable
     @JsonProperty(JSON_PROPERTY_AUTHOR_ID)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Integer authorId;
+   private Long authorId;
 
     /**
-     * HTML body of the article. Unsafe tags and attributes may be removed before display. For a list of safe tags and attributes, see <a href="https://support.zendesk.com/hc/en-us/articles/115015895948">Allowing unsafe HTML in Help Center articles</a> in Zendesk help
+     * HTML body of the article. Unsafe tags and attributes may be removed before display. For a list of safe tags and
+     * attributes, see <a href="https://support.zendesk.com/hc/en-us/articles/115015895948">Allowing unsafe HTML
+     * in Help Center articles</a> in Zendesk help
      */
     @Nullable
     @JsonProperty(JSON_PROPERTY_BODY)
@@ -132,7 +137,8 @@ public class ArticleObject implements SearchObjectResultsInner {
     private String createdAt;
 
     /**
-     * True if the translation for the current locale is a draft; false otherwise. false by default. Can be set when creating but not when updating. For updating, see Translations
+     * True if the translation for the current locale is a draft; false otherwise. false by default. Can be set when
+     * creating but not when updating. For updating, see Translations
      */
     @Nullable
     @JsonProperty(JSON_PROPERTY_DRAFT)
@@ -161,10 +167,11 @@ public class ArticleObject implements SearchObjectResultsInner {
     @Nullable
     @JsonProperty(JSON_PROPERTY_ID)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Integer id;
+   private Long id;
 
     /**
-     * An array of label names associated with this article. By default no label names are used. Only available on certain plans
+     * An array of label names associated with this article. By default, no label names are used. Only available on
+     * certain plans
      */
     @Nullable
     @JsonProperty(JSON_PROPERTY_LABEL_NAMES)
@@ -209,7 +216,7 @@ public class ArticleObject implements SearchObjectResultsInner {
     @Nullable
     @JsonProperty(JSON_PROPERTY_SECTION_ID)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Integer sectionId;
+   private Long sectionId;
 
     /**
      * The source (default) locale of the article
@@ -236,15 +243,18 @@ public class ArticleObject implements SearchObjectResultsInner {
     private String url;
 
     /**
-     * The id of the user segment which defines who can see this article. Set to null to make it accessible to everyone. Either user_segment_id or user_segment_ids must be specified
+     * The id of the user segment which defines who can see this article. Set to null to make it accessible to everyone.
+     * Either user_segment_id or user_segment_ids must be specified
      */
     @Nullable
     @JsonProperty(JSON_PROPERTY_USER_SEGMENT_ID)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Integer userSegmentId;
+   private Long userSegmentId;
 
     /**
-     * List of user segment ids which define who can view this article. Set to an empty list to make it accessible to everyone. For Enterprise plans only this may contain more than one user_segment_id. Either user_segment_id or user_segment_ids must be specified
+     * List of user segment ids which define who can view this article. Set to an empty list to make it accessible to
+     * everyone. For Enterprise plans only this may contain more than one user_segment_id. Either user_segment_id or
+     * user_segment_ids must be specified
      */
     @Nullable
     @JsonProperty(JSON_PROPERTY_USER_SEGMENT_IDS)
@@ -267,7 +277,7 @@ public class ArticleObject implements SearchObjectResultsInner {
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
     private Integer voteSum;
 
-    public ArticleObject(String locale, Integer permissionGroupId, String title) {
+    public ArticleObject(String locale, Long permissionGroupId, String title) {
         this.locale = locale;
         this.permissionGroupId = permissionGroupId;
         this.title = title;
@@ -306,7 +316,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return the permissionGroupId property value
      */
-    public Integer getPermissionGroupId() {
+    public Long getPermissionGroupId() {
         return permissionGroupId;
     }
 
@@ -315,7 +325,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @param permissionGroupId property value to set
      */
-    public void setPermissionGroupId(Integer permissionGroupId) {
+    public void setPermissionGroupId(Long permissionGroupId) {
         this.permissionGroupId = permissionGroupId;
     }
 
@@ -324,7 +334,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return The same instance of ArticleObject for chaining.
      */
-    public ArticleObject permissionGroupId(Integer permissionGroupId) {
+    public ArticleObject permissionGroupId(Long permissionGroupId) {
         this.permissionGroupId = permissionGroupId;
         return this;
     }
@@ -362,7 +372,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return the authorId property value
      */
-    public Integer getAuthorId() {
+    public Long getAuthorId() {
         return authorId;
     }
 
@@ -371,7 +381,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @param authorId property value to set
      */
-    public void setAuthorId(Integer authorId) {
+    public void setAuthorId(Long authorId) {
         this.authorId = authorId;
     }
 
@@ -380,13 +390,15 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return The same instance of ArticleObject for chaining.
      */
-    public ArticleObject authorId(Integer authorId) {
+    public ArticleObject authorId(Long authorId) {
         this.authorId = authorId;
         return this;
     }
 
     /**
-     * HTML body of the article. Unsafe tags and attributes may be removed before display. For a list of safe tags and attributes, see <a href="https://support.zendesk.com/hc/en-us/articles/115015895948">Allowing unsafe HTML in Help Center articles</a> in Zendesk help
+     * HTML body of the article. Unsafe tags and attributes may be removed before display. For a list of safe tags and
+     * attributes, see <a href="https://support.zendesk.com/hc/en-us/articles/115015895948">Allowing unsafe HTML in
+     * Help Center articles</a> in Zendesk help
      *
      * @return the body property value
      */
@@ -500,7 +512,8 @@ public class ArticleObject implements SearchObjectResultsInner {
     }
 
     /**
-     * True if the translation for the current locale is a draft; false otherwise. false by default. Can be set when creating but not when updating. For updating, see Translations
+     * True if the translation for the current locale is a draft; false otherwise. false by default. Can be set when
+     * creating but not when updating. For updating, see Translations
      *
      * @return the draft property value
      */
@@ -558,7 +571,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return the id property value
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -567,12 +580,13 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @param id property value to set
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * An array of label names associated with this article. By default no label names are used. Only available on certain plans
+     * An array of label names associated with this article. By default no label names are used. Only available on
+     * certain plans
      *
      * @return the labelNames property value
      */
@@ -708,7 +722,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return the sectionId property value
      */
-    public Integer getSectionId() {
+    public Long getSectionId() {
         return sectionId;
     }
 
@@ -717,7 +731,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @param sectionId property value to set
      */
-    public void setSectionId(Integer sectionId) {
+    public void setSectionId(Long sectionId) {
         this.sectionId = sectionId;
     }
 
@@ -726,7 +740,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return The same instance of ArticleObject for chaining.
      */
-    public ArticleObject sectionId(Integer sectionId) {
+    public ArticleObject sectionId(Long sectionId) {
         this.sectionId = sectionId;
         return this;
     }
@@ -786,11 +800,12 @@ public class ArticleObject implements SearchObjectResultsInner {
     }
 
     /**
-     * The id of the user segment which defines who can see this article. Set to null to make it accessible to everyone. Either user_segment_id or user_segment_ids must be specified
+     * The id of the user segment which defines who can see this article. Set to null to make it accessible to everyone.
+     * Either user_segment_id or user_segment_ids must be specified
      *
      * @return the userSegmentId property value
      */
-    public Integer getUserSegmentId() {
+    public Long getUserSegmentId() {
         return userSegmentId;
     }
 
@@ -799,7 +814,7 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @param userSegmentId property value to set
      */
-    public void setUserSegmentId(Integer userSegmentId) {
+    public void setUserSegmentId(Long userSegmentId) {
         this.userSegmentId = userSegmentId;
     }
 
@@ -808,13 +823,15 @@ public class ArticleObject implements SearchObjectResultsInner {
      *
      * @return The same instance of ArticleObject for chaining.
      */
-    public ArticleObject userSegmentId(Integer userSegmentId) {
+    public ArticleObject userSegmentId(Long userSegmentId) {
         this.userSegmentId = userSegmentId;
         return this;
     }
 
     /**
-     * List of user segment ids which define who can view this article. Set to an empty list to make it accessible to everyone. For Enterprise plans only this may contain more than one user_segment_id. Either user_segment_id or user_segment_ids must be specified
+     * List of user segment ids which define who can view this article. Set to an empty list to make it accessible to
+     * everyone. For Enterprise plans only this may contain more than one user_segment_id. Either user_segment_id or
+     * user_segment_ids must be specified
      *
      * @return the userSegmentIds property value
      */
@@ -927,7 +944,9 @@ public class ArticleObject implements SearchObjectResultsInner {
 
     @Override
     public int hashCode() {
-        return Objects.hash(locale, permissionGroupId, title, authorId, body, commentsDisabled, contentTagIds, createdAt, draft, editedAt, htmlUrl, id, labelNames, outdated, outdatedLocales, position, promoted, sectionId, sourceLocale, updatedAt, url, userSegmentId, userSegmentIds, voteCount, voteSum);
+        return Objects.hash(locale, permissionGroupId, title, authorId, body, commentsDisabled, contentTagIds,
+                createdAt, draft, editedAt, htmlUrl, id, labelNames, outdated, outdatedLocales, position, promoted,
+                sectionId, sourceLocale, updatedAt, url, userSegmentId, userSegmentIds, voteCount, voteSum);
     }
 
     @Override

@@ -14,6 +14,10 @@ import reactor.core.publisher.Mono;
 import java.time.ZonedDateTime;
 import java.util.List;
 
+/**
+ * @author Jonathan Zollinger
+ * @since 0.0.1
+ */
 @Client("${micronaut.http.services.zendesk.url}")
 public interface SearchClient {
 

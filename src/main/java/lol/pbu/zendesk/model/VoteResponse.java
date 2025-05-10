@@ -9,8 +9,11 @@ import jakarta.validation.Valid;
 
 import java.util.Objects;
 
+
+
 /**
- * VoteResponse
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(VoteResponse.JSON_PROPERTY_VOTE)

@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * HelpCenterSessionResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(HelpCenterSessionResponse.JSON_PROPERTY_CURRENT_SESSION)

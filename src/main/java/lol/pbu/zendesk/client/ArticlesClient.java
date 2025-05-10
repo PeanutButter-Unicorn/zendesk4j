@@ -65,7 +65,7 @@ public interface ArticlesClient {
     );
 
     /**
-     * List Articles<br>
+     * List Articles
      *
      * @param locale     The locale the item is displayed in
      * @param sortBy     Sorts the articles by one of the accepted values

@@ -10,6 +10,9 @@ import java.util.Objects;
 
 /**
  * SectionPutRequest
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(SectionPutRequest.JSON_PROPERTY_SECTION)

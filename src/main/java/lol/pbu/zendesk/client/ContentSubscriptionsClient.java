@@ -9,6 +9,10 @@ import lol.pbu.zendesk.model.ContentSubscriptionsResponse;
 import lol.pbu.zendesk.model.SubscriptionResponse;
 import reactor.core.publisher.Mono;
 
+/**
+ * @author Jonathan Zollinger
+ * @since 0.0.1
+ */
 @Client("${micronaut.http.services.zendesk.url}")
 public interface ContentSubscriptionsClient {
 

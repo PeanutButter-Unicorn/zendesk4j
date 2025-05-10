@@ -9,6 +9,10 @@ import lol.pbu.zendesk.model.TopicResponse;
 import lol.pbu.zendesk.model.TopicsResponse;
 import reactor.core.publisher.Mono;
 
+/**
+ * @author Jonathan Zollinger
+ * @since 0.0.1
+ */
 @Client("${micronaut.http.services.zendesk.url}")
 public interface TopicsClient {
 

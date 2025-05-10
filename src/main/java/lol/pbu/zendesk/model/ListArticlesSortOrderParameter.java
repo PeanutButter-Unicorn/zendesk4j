@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * Gets or Sets ListArticles_sort_order_parameter
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 public enum ListArticlesSortOrderParameter {

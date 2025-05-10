@@ -14,6 +14,9 @@ import java.util.Objects;
 
 /**
  * PostObject
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder({

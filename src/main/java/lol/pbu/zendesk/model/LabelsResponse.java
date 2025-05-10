@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * LabelsResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(LabelsResponse.JSON_PROPERTY_LABELS)

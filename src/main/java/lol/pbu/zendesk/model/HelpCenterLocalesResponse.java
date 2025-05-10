@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * HelpCenterLocalesResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(HelpCenterLocalesResponse.JSON_PROPERTY_LOCALES)

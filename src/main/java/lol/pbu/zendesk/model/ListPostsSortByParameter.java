@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * Gets or Sets ListPosts_sort_by_parameter
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 public enum ListPostsSortByParameter {

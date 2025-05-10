@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * CreateUserImageResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(CreateUserImageResponse.JSON_PROPERTY_USER_IMAGE)

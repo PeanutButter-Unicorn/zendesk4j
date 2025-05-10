@@ -13,6 +13,9 @@ import java.util.Objects;
 
 /**
  * ArticlesResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(ArticlesResponse.JSON_PROPERTY_ARTICLES)

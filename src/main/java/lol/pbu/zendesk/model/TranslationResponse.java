@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * TranslationResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(TranslationResponse.JSON_PROPERTY_TRANSLATION)

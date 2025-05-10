@@ -12,6 +12,10 @@ import lol.pbu.zendesk.model.TranslationResponse;
 import lol.pbu.zendesk.model.TranslationsResponse;
 import reactor.core.publisher.Mono;
 
+/**
+ * @author Jonathan Zollinger
+ * @since 0.0.1
+ */
 @Client("${micronaut.http.services.zendesk.url}")
 public interface TranslationsClient {
 

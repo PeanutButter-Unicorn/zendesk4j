@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * SectionResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(SectionResponse.JSON_PROPERTY_SECTION)

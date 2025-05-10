@@ -8,6 +8,10 @@ import lol.pbu.zendesk.model.CreateUserImageResponse;
 import lol.pbu.zendesk.model.RequestUserImageUploadResponse;
 import reactor.core.publisher.Mono;
 
+/**
+ * @author Jonathan Zollinger
+ * @since 0.0.1
+ */
 @Client("${micronaut.http.services.zendesk.url}")
 public interface UserImagesClient {
 

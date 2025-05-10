@@ -9,6 +9,10 @@ import lol.pbu.zendesk.model.PostCommentResponse;
 import lol.pbu.zendesk.model.PostCommentsResponse;
 import reactor.core.publisher.Mono;
 
+/**
+ * @author Jonathan Zollinger
+ * @since 0.0.1
+ */
 @Client("${micronaut.http.services.zendesk.url}")
 public interface PostCommentsClient {
 

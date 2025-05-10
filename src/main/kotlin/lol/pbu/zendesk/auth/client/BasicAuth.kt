@@ -1,4 +1,4 @@
-package lol.pbu.zendesk.auth
+package lol.pbu.zendesk.auth.client
 
 import io.micronaut.http.annotation.FilterMatcher
 import kotlin.annotation.AnnotationRetention.RUNTIME

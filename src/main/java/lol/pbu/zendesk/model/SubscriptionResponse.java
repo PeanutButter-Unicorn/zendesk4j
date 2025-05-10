@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * SubscriptionResponse
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(SubscriptionResponse.JSON_PROPERTY_SUBSCRIPTION)

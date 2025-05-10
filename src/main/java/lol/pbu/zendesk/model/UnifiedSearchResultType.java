@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 /**
  * Gets or Sets UnifiedSearchResult_type
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 public enum UnifiedSearchResultType {

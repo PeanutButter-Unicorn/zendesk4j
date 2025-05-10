@@ -11,6 +11,9 @@ import java.util.Objects;
 
 /**
  * SearchObject
+ * 
+ * @author Jonathan Zollinger
+ * @since 0.0.1
  */
 @Serdeable
 @JsonPropertyOrder(SearchObject.JSON_PROPERTY_RESULTS)
