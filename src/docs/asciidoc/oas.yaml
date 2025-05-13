@@ -68,7 +68,7 @@ paths:
         - Posts
       summary: Create Post
       description: |
-        Adds a post to the specified [topic](/api-reference/help_center/help-center-api/topics).
+        Adds a post to the specified [topic](https://developer.zendesk.com/api-reference/help_center/help-center-api/topics).
 
         #### Allowed for
 
@@ -81,7 +81,7 @@ paths:
         Agents with the Help Center manager role can optionally supply a `created_at` as part of the `post` object. If it is not provided `created_at` is set to the current time.
 
         Supplying a `notify_subscribers` property with a value of false will prevent subscribers to the post's topic from receiving a post creation email notification. This can be helpful when creating many posts at a time. Specify the property in the root of the JSON object, not in the "post" object.
-        Optionally, you can attach existing [content tags](/api-reference/help_center/help-center-api/content_tags) by specifying their ids.
+        Optionally, you can attach existing [content tags](https://developer.zendesk.com/api-reference/help_center/help-center-api/content_tags) by specifying their ids.
       responses:
         "201":
           description: Created Response
@@ -350,7 +350,7 @@ paths:
         - Content Subscriptions
       summary: Create Post Subscription
       description: |
-        Creates a subscription to a given [post](/api-reference/help_center/help-center-api/posts).
+        Creates a subscription to a given [post](https://developer.zendesk.com/api-reference/help_center/help-center-api/posts).
 
         #### Allowed for
 
@@ -422,7 +422,7 @@ paths:
         - Content Subscriptions
       summary: Delete Post Subscription
       description: |
-        Removes a subscription to a given [post](/api-reference/help_center/help-center-api/posts).
+        Removes a subscription to a given [post](https://developer.zendesk.com/api-reference/help_center/help-center-api/posts).
 
         #### Allowed for
 
@@ -590,7 +590,7 @@ paths:
         - Content Subscriptions
       summary: Create Topic Subscription
       description: |
-        Creates a subscription to a given [topic](/api-reference/help_center/help-center-api/topics).
+        Creates a subscription to a given [topic](https://developer.zendesk.com/api-reference/help_center/help-center-api/topics).
 
         #### Allowed for
 
@@ -674,7 +674,7 @@ paths:
         - Content Subscriptions
       summary: Delete Topic Subscription
       description: |
-        Removes a subscription to a given [topic](/api-reference/help_center/help-center-api/topics).
+        Removes a subscription to a given [topic](https://developer.zendesk.com/api-reference/help_center/help-center-api/topics).
 
         #### Allowed for
 
@@ -994,7 +994,7 @@ paths:
         You can associate attachments in bulk to only one article at a time,
         with a maximum of 20 attachments per request.
 
-        To create the attachments, see [Create Unassociated Attachment](/api-reference/help_center/help-center-api/article_attachments#create-unassociated-attachment).
+        To create the attachments, see [Create Unassociated Attachment](https://developer.zendesk.com/api-reference/help_center/help-center-api/article_attachments#create-unassociated-attachment).
 
         #### Allowed for
 
@@ -1061,7 +1061,7 @@ paths:
         - Article Comments
       summary: Create Comment
       description: |
-        Adds a comment to the specified [article](/api-reference/help_center/help-center-api/articles). Because comments are associated
+        Adds a comment to the specified [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles). Because comments are associated
         with a specific article translation, or locale, you must specify a locale.
 
         #### Allowed for
@@ -1233,7 +1233,7 @@ paths:
 
         The endpoint sets one of the article's translation as the source locale of the article. The article in the previous source locale becomes a translation, which you can delete separately.
 
-        The new source locale must be enabled in Guide. See [Enabling languages for your help center](https://support.zendesk.com/hc/en-us/articles/224857687#topic_ys2_kxh_tz). You can use the [List all enabled locales and default locale](/api-reference/help_center/help-center-api/translations/#list-enabled-locales-and-default-locale) endpoint to check for the enabled locales.
+        The new source locale must be enabled in Guide. See [Enabling languages for your help center](https://support.zendesk.com/hc/en-us/articles/224857687#topic_ys2_kxh_tz). You can use the [List all enabled locales and default locale](https://developer.zendesk.com/api-reference/help_center/help-center-api/translations/#list-enabled-locales-and-default-locale) endpoint to check for the enabled locales.
 
         #### Allowed for
 
@@ -1304,7 +1304,7 @@ paths:
         - Content Subscriptions
       summary: Create Article Subscription
       description: |
-        Creates a subscription to a given [article](/api-reference/help_center/help-center-api/articles).
+        Creates a subscription to a given [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles).
 
         #### Allowed for
 
@@ -1373,7 +1373,7 @@ paths:
         - Content Subscriptions
       summary: Delete Article Subscription
       description: |
-        Removes the specified subscription from the specified [article](/api-reference/help_center/help-center-api/articles).
+        Removes the specified subscription from the specified [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles).
 
         #### Allowed for
 
@@ -1391,7 +1391,7 @@ paths:
         - Votes
       summary: Create Vote
       description: |
-        Creates an up or down vote for a given [article](/api-reference/help_center/help-center-api/articles), [article comment](/api-reference/help_center/help-center-api/article_comments/), [post](/api-reference/help_center/help-center-api/posts), or [post comment](/api-reference/help_center/help-center-api/post_comments).
+        Creates an up or down vote for a given [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles), [article comment](https://developer.zendesk.com/api-reference/help_center/help-center-api/article_comments/), [post](https://developer.zendesk.com/api-reference/help_center/help-center-api/posts), or [post comment](https://developer.zendesk.com/api-reference/help_center/help-center-api/post_comments).
         If a vote already exists for the source object, it's updated.
 
         #### Allowed for
@@ -1507,7 +1507,7 @@ paths:
       summary: Create Category
       description: |
         You must specify a category name and locale. The locale can be omitted if it's specified
-        in the URL. Optionally, you can specify multiple [translations](/api-reference/help_center/help-center-api/translations) for
+        in the URL. Optionally, you can specify multiple [translations](https://developer.zendesk.com/api-reference/help_center/help-center-api/translations) for
         the category. The specified locales must be enabled for the current Help Center.
 
         #### Allowed for
@@ -1612,9 +1612,9 @@ paths:
         - Sections
       summary: Create Section
       description: |
-        Creates a section in a given [category](/api-reference/help_center/help-center-api/categories). You must
+        Creates a section in a given [category](https://developer.zendesk.com/api-reference/help_center/help-center-api/categories). You must
         specify a section name and locale. The locale can be omitted if it's specified
-        in the URL. Optionally, you can specify multiple [translations](/api-reference/help_center/help-center-api/translations)
+        in the URL. Optionally, you can specify multiple [translations](https://developer.zendesk.com/api-reference/help_center/help-center-api/translations)
         for the section. The specified locales must be enabled for
         the current Help Center.
 
@@ -1681,7 +1681,7 @@ paths:
         - Sections
       summary: List Sections
       description: |
-        Lists all the sections in Help Center or in a specific [category](/api-reference/help_center/help-center-api/categories).
+        Lists all the sections in Help Center or in a specific [category](https://developer.zendesk.com/api-reference/help_center/help-center-api/categories).
 
         The `{locale}` is required only for end users and anomynous users. Admins and agents can omit it.
 
@@ -1788,7 +1788,7 @@ paths:
 
         Unlike other sideloads, translations are embedded within the section since they're
         not shared between resources.
-        [Category](/api-reference/help_center/help-center-api/categories) translations are only sideloaded if categories are.
+        [Category](https://developer.zendesk.com/api-reference/help_center/help-center-api/categories) translations are only sideloaded if categories are.
       responses:
         "200":
           description: OK Response
@@ -1815,7 +1815,7 @@ paths:
         * parent_section_id
         * theme_template
 
-        To update non-source section translations, see [Translations](/api-reference/help_center/help-center-api/translations).
+        To update non-source section translations, see [Translations](https://developer.zendesk.com/api-reference/help_center/help-center-api/translations).
 
         #### Allowed for
 
@@ -1935,7 +1935,7 @@ paths:
         - Content Subscriptions
       summary: List Section Subscriptions
       description: |
-        Lists the subscriptions to a given [section](/api-reference/help_center/help-center-api/sections).
+        Lists the subscriptions to a given [section](https://developer.zendesk.com/api-reference/help_center/help-center-api/sections).
 
         **Note**: `{/locale}` is an optional parameter for admins and agents. End users and anonymous users must provide the parameter.
 
@@ -1980,7 +1980,7 @@ paths:
         - Content Subscriptions
       summary: Create Section Subscription
       description: |
-        Creates a subscription to a given [section](/api-reference/help_center/help-center-api/sections).
+        Creates a subscription to a given [section](https://developer.zendesk.com/api-reference/help_center/help-center-api/sections).
 
         #### Allowed for
 
@@ -2046,7 +2046,7 @@ paths:
         - Content Subscriptions
       summary: Delete Section Subscription
       description: |
-        Removes the specified subscription from the specified [section](/api-reference/help_center/help-center-api/sections).
+        Removes the specified subscription from the specified [section](https://developer.zendesk.com/api-reference/help_center/help-center-api/sections).
 
         #### Allowed for
 
@@ -2093,16 +2093,16 @@ paths:
         - Article Attachments
       summary: Create Article Attachment
       description: |
-        Creates an attachment for the specified [article](/api-reference/help_center/help-center-api/articles). You can specify whether the attachment is inline or not. The default is false.
+        Creates an attachment for the specified [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles). You can specify whether the attachment is inline or not. The default is false.
 
-        The `guide_media_id` parameter is required and must be submitted as multipart form data. This is the id of the media object to be attached to the article. See [Create guide media object](/api-reference/help_center/help-center-api/guide_medias/#create-guide-media). The 'inline' parameter is optional.
+        The `guide_media_id` parameter is required and must be submitted as multipart form data. This is the id of the media object to be attached to the article. See [Create guide media object](https://developer.zendesk.com/api-reference/help_center/help-center-api/guide_medias/#create-guide-media). The 'inline' parameter is optional.
 
         If your integration depends on keeping the translation body in sync with an external system, create a separate article attachment for each translation and set the locale in advance.
         Inline article attachments are automatically assigned a locale when they are embedded in a translation body. If the same attachment is inserted in multiple translations, it will create multiple article attachment records, all linked to the same file, and the references in the translation bodies will be updated accordingly.
 
         *Notes:*
 
-          - First create a [Guide media object](/api-reference/help_center/help-center-api/guide_medias/#create-guide-media) and then [create an article attachment](/api-reference/help_center/help-center-api/article_attachments/#create-article-attachment) with the value of the media object's `id`. When creating the attachment, use the value of the media object's `id` as the value of the attachment's `guide_media_id` property.
+          - First create a [Guide media object](https://developer.zendesk.com/api-reference/help_center/help-center-api/guide_medias/#create-guide-media) and then [create an article attachment](https://developer.zendesk.com/api-reference/help_center/help-center-api/article_attachments/#create-article-attachment) with the value of the media object's `id`. When creating the attachment, use the value of the media object's `id` as the value of the attachment's `guide_media_id` property.
           - Inline article attachments that are no longer embedded in the translation get deleted. However the corresponding file is kept in the account's media library.
 
         #### Allowed for
@@ -2212,7 +2212,7 @@ paths:
         - Translations
       summary: List Translations
       description: |
-        Lists all translations for a given [article](/api-reference/help_center/help-center-api/articles), [section](/api-reference/help_center/help-center-api/sections), or [category](/api-reference/help_center/help-center-api/categories).
+        Lists all translations for a given [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles), [section](https://developer.zendesk.com/api-reference/help_center/help-center-api/sections), or [category](https://developer.zendesk.com/api-reference/help_center/help-center-api/categories).
 
         #### Allowed for
 
@@ -2263,7 +2263,7 @@ paths:
         - Translations
       summary: Create Translation
       description: |
-        Creates a translation for a given [article](/api-reference/help_center/help-center-api/articles), [section](/api-reference/help_center/help-center-api/sections), or [category](/api-reference/help_center/help-center-api/categories). Any locale
+        Creates a translation for a given [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles), [section](https://developer.zendesk.com/api-reference/help_center/help-center-api/sections), or [category](https://developer.zendesk.com/api-reference/help_center/help-center-api/categories). Any locale
         that you specify must be enabled for the current Help Center. The locale must also be
         different from that of any existing translation associated with the source object.
 
@@ -2349,7 +2349,7 @@ paths:
         - Translations
       summary: List Missing Translations
       description: |
-        Lists the locales that don't have a translation for a given [article](/api-reference/help_center/help-center-api/articles), [section](/api-reference/help_center/help-center-api/sections), or [category](/api-reference/help_center/help-center-api/categories).
+        Lists the locales that don't have a translation for a given [article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles), [section](https://developer.zendesk.com/api-reference/help_center/help-center-api/sections), or [category](https://developer.zendesk.com/api-reference/help_center/help-center-api/categories).
 
         #### Allowed for
 
@@ -2379,13 +2379,13 @@ paths:
       summary: Create Unassociated Attachment
       description: |
         You can use this endpoint for bulk imports. It lets you upload a file without associating it
-        to an article until later. See [Associate Attachments in Bulk to Article](/api-reference/help_center/help-center-api/articles#associate-attachments-in-bulk-to-article).
+        to an article until later. See [Associate Attachments in Bulk to Article](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles#associate-attachments-in-bulk-to-article).
 
-         If you plan on adding attachments to article translations, import a separate article attachment for each translation and set the locale in advance. For more information on translation attachments, see [Create Article Attachment](/api-reference/help_center/help-center-api/article_attachments/#create-article-attachment).
+         If you plan on adding attachments to article translations, import a separate article attachment for each translation and set the locale in advance. For more information on translation attachments, see [Create Article Attachment](https://developer.zendesk.com/api-reference/help_center/help-center-api/article_attachments/#create-article-attachment).
 
         *Notes:*
 
-          - Zendesk recommends to first create a [Guide media object](/api-reference/help_center/help-center-api/guide_medias/#create-guide-media) and then [create an article attachment](/api-reference/help_center/help-center-api/article_attachments/#create-article-attachment) with the value of the media object's `id`. When creating the attachment, use the value of the media object's `id` as the value of the attachment's `guide_media_id` property.
+          - Zendesk recommends to first create a [Guide media object](https://developer.zendesk.com/api-reference/help_center/help-center-api/guide_medias/#create-guide-media) and then [create an article attachment](https://developer.zendesk.com/api-reference/help_center/help-center-api/article_attachments/#create-article-attachment) with the value of the media object's `id`. When creating the attachment, use the value of the media object's `id` as the value of the attachment's `guide_media_id` property.
           - Associate attachments to articles as soon as possible. For example, if you use the endpoint to bulk-import inline images, only signed-in end users can see the images; anonymous users don't have permission to view unassociated images. Also, from time to time, we purge old article attachments not associated to any article. To ensure you don't lose an uploaded file, associate it to an article.
         #### Allowed for
 
@@ -2502,7 +2502,7 @@ paths:
 
         The results are sorted by relevance by default. You can also sort the results by `created_at` or `updated_at`.
 
-        The [article objects](/api-reference/help_center/help-center-api/articles) returned by the search endpoint contain two additional properties:
+        The [article objects](https://developer.zendesk.com/api-reference/help_center/help-center-api/articles) returned by the search endpoint contain two additional properties:
 
         | Name        | Type   | Read-only | Mandatory | Comment
         |-------------|--------|-----------|-----------|-------
@@ -2926,7 +2926,7 @@ paths:
       description: |
         Lists the sections that use the specified user segment.
 
-        This endpoint supports pagination as described in [Pagination](/api-reference/help_center/help-center-api/help-center-api/#pagination).
+        This endpoint supports pagination as described in [Pagination](https://developer.zendesk.com/api-reference/help_center/help-center-api/help-center-api/#pagination).
 
         #### Allowed for
 
@@ -2952,7 +2952,7 @@ paths:
       description: |
         Lists the topics that use the specified user segment.
 
-        This endpoint supports pagination as described in [Pagination](/api-reference/help_center/help-center-api/help-center-api/#pagination).
+        This endpoint supports pagination as described in [Pagination](https://developer.zendesk.com/api-reference/help_center/help-center-api/help-center-api/#pagination).
 
         #### Allowed for
 

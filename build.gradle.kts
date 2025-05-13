@@ -1,8 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.9.25"
 //    id("io.micronaut.openapi") version "4.5.3"
-    id("org.jetbrains.kotlin.plugin.allopen") version "1.9.25"
-    id("com.google.devtools.ksp") version "1.9.25-1.0.20"
     id("groovy")
     id("io.micronaut.application") version "4.5.3"
     id("com.gradleup.shadow") version "8.3.6"
@@ -21,17 +18,11 @@ repositories {
 
 dependencies {
     annotationProcessor("io.micronaut.validation:micronaut-validation-processor")
-    ksp("io.micronaut.data:micronaut-data-processor")
-    ksp("io.micronaut:micronaut-http-validation")
     implementation("io.micronaut.reactor:micronaut-reactor-http-client")
-    ksp("io.micronaut.serde:micronaut-serde-processor")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut.data:micronaut-data-jdbc")
-    implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("io.micronaut.sql:micronaut-jdbc-hikari")
-    implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("org.slf4j:jul-to-slf4j")
     implementation("io.micronaut.validation:micronaut-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
@@ -40,14 +31,15 @@ dependencies {
     runtimeOnly("org.yaml:snakeyaml")
     testImplementation("org.testcontainers:spock")
     testImplementation("org.testcontainers:testcontainers")
+    testImplementation("net.datafaker:datafaker:2.4.3")
 }
 
 
 application {
-    mainClass = "lol.pbu.ApplicationKt"
+    mainClass = "lol.pbu.Application"
 }
 java {
-    sourceCompatibility = JavaVersion.toVersion("21")
+    sourceCompatibility = JavaVersion.toVersion("17")
 }
 
 
@@ -82,7 +74,7 @@ micronaut {
 
 
 tasks.named<io.micronaut.gradle.docker.NativeImageDockerfile>("dockerfileNative") {
-    jdkVersion = "21"
+    jdkVersion = "17"
 }
 
 

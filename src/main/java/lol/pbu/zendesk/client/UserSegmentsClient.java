@@ -12,10 +12,13 @@ import lol.pbu.zendesk.model.UserSegmentResponse;
 import lol.pbu.zendesk.model.UserSegmentsResponse;
 import reactor.core.publisher.Mono;
 
+import static io.micronaut.http.HttpHeaders.ACCEPT;
+
 /**
  * @author Jonathan Zollinger
  * @since 0.0.1
  */
+@Header(name = ACCEPT, value = "application/json")
 @Client("${micronaut.http.services.zendesk.url}")
 public interface UserSegmentsClient {
 
@@ -49,11 +52,11 @@ public interface UserSegmentsClient {
 
     /**
      * List Sections with User Segment<br>
-     * Lists the sections that use the specified user segment.  This endpoint supports pagination as described in
-     * <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/help-center-api/#pagination">Pagination</a>.
-     * <h4>Allowed for</h4>
+     * <p>This endpoint supports pagination as described in <a href="https://developer.zendesk.com//api-reference/help_center/help-center-api/help-center-api/#pagination">
+     *     Pagination</a>.</p>
+     * <h4 id="allowed-for">Allowed for</h4>
      * <ul>
-     * <li>Help Center managers</li>
+     *   <li>Help Center managers</li>
      * </ul>
      *
      * @param userSegmentId The unique ID of the user segment

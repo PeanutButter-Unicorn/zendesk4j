@@ -14,30 +14,16 @@ class ArticleClientSpec extends Specification {
     @Shared
     ArticlesClient articlesClient
 
-
     def "can list articles"() {
         when:
-        def response = articlesClient.listArticles("en-us", ListArticlesSortByParameter.CREATED_AT, ListArticlesSortOrderParameter.ASC, null, null)
+        def response = articlesClient.listArticles(
+                "en-us",
+                ListArticlesSortByParameter.CREATED_AT,
+                ListArticlesSortOrderParameter.ASC,
+                null,
+                null)
 
         then:
         response.block().articles.size() > 0
-    }
-
-    def "CreateAttachment"() {
-    }
-
-    def "DeleteArticleAttachment"() {
-    }
-
-    def "ListArticleAttachments"() {
-    }
-
-    def "ListBlockArticleAttachments"() {
-    }
-
-    def "ListInlineArticleAttachments"() {
-    }
-
-    def "ShowArticleAttachment"() {
     }
 }

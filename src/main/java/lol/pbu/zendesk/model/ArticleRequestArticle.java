@@ -43,6 +43,11 @@ public class ArticleRequestArticle {
     @JsonProperty(JSON_PROPERTY_TITLE)
     private String title;
 
+    /**
+     * The id of the user segment which defines who can see this article.
+     * <p>
+     * See <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/user_segments/">User Segments</a>
+     */
     @NotNull
     @JsonProperty(JSON_PROPERTY_USER_SEGMENT_ID)
     private Integer userSegmentId;
