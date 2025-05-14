@@ -58,7 +58,7 @@ public class UserSegmentObject {
     @Nullable
     @JsonProperty(JSON_PROPERTY_ADDED_USER_IDS)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private List<@NotNull Integer> addedUserIds;
+    private List<@NotNull Long> addedUserIds;
 
     /**
      * Whether the user segment is built-in. Built-in user segments cannot be modified
@@ -82,7 +82,7 @@ public class UserSegmentObject {
     @Nullable
     @JsonProperty(JSON_PROPERTY_GROUP_IDS)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private List<@NotNull Integer> groupIds;
+    private List<@NotNull Long> groupIds;
 
     /**
      * Automatically assigned when the user segment is created
@@ -90,7 +90,7 @@ public class UserSegmentObject {
     @Nullable
     @JsonProperty(JSON_PROPERTY_ID)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private Integer id;
+    private Long id;
 
     /**
      * User segment name (localized to the locale of the current user for built-in user segments)
@@ -114,7 +114,7 @@ public class UserSegmentObject {
     @Nullable
     @JsonProperty(JSON_PROPERTY_ORGANIZATION_IDS)
     @JsonInclude(JsonInclude.Include.USE_DEFAULTS)
-    private List<@NotNull Integer> organizationIds;
+    private List<@NotNull Long> organizationIds;
 
     /**
      * All the tags a user must have to have access
@@ -169,7 +169,7 @@ public class UserSegmentObject {
      *
      * @return the addedUserIds property value
      */
-    public List<@NotNull Integer> getAddedUserIds() {
+    public List<@NotNull Long> getAddedUserIds() {
         return addedUserIds;
     }
 
@@ -178,7 +178,7 @@ public class UserSegmentObject {
      *
      * @param addedUserIds property value to set
      */
-    public void setAddedUserIds(List<@NotNull Integer> addedUserIds) {
+    public void setAddedUserIds(List<@NotNull Long> addedUserIds) {
         this.addedUserIds = addedUserIds;
     }
 
@@ -187,7 +187,7 @@ public class UserSegmentObject {
      *
      * @return The same instance of UserSegmentObject for chaining.
      */
-    public UserSegmentObject addedUserIds(List<@NotNull Integer> addedUserIds) {
+    public UserSegmentObject addedUserIds(List<@NotNull Long> addedUserIds) {
         this.addedUserIds = addedUserIds;
         return this;
     }
@@ -196,7 +196,7 @@ public class UserSegmentObject {
      *
      * @return The same instance of UserSegmentObject for chaining.
      */
-    public UserSegmentObject addAddedUserIdsItem(Integer addedUserIdsItem) {
+    public UserSegmentObject addAddedUserIdsItem(Long addedUserIdsItem) {
         if (addedUserIds == null) {
             addedUserIds = new ArrayList<>();
         }
@@ -245,7 +245,7 @@ public class UserSegmentObject {
      *
      * @return the groupIds property value
      */
-    public List<@NotNull Integer> getGroupIds() {
+    public List<@NotNull Long> getGroupIds() {
         return groupIds;
     }
 
@@ -254,7 +254,7 @@ public class UserSegmentObject {
      *
      * @param groupIds property value to set
      */
-    public void setGroupIds(List<@NotNull Integer> groupIds) {
+    public void setGroupIds(List<@NotNull Long> groupIds) {
         this.groupIds = groupIds;
     }
 
@@ -263,7 +263,7 @@ public class UserSegmentObject {
      *
      * @return The same instance of UserSegmentObject for chaining.
      */
-    public UserSegmentObject groupIds(List<@NotNull Integer> groupIds) {
+    public UserSegmentObject groupIds(List<@NotNull Long> groupIds) {
         this.groupIds = groupIds;
         return this;
     }
@@ -272,7 +272,7 @@ public class UserSegmentObject {
      *
      * @return The same instance of UserSegmentObject for chaining.
      */
-    public UserSegmentObject addGroupIdsItem(Integer groupIdsItem) {
+    public UserSegmentObject addGroupIdsItem(Long groupIdsItem) {
         if (groupIds == null) {
             groupIds = new ArrayList<>();
         }
@@ -285,7 +285,7 @@ public class UserSegmentObject {
      *
      * @return the id property value
      */
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
@@ -294,7 +294,7 @@ public class UserSegmentObject {
      *
      * @param id property value to set
      */
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -371,7 +371,7 @@ public class UserSegmentObject {
      *
      * @return the organizationIds property value
      */
-    public List<@NotNull Integer> getOrganizationIds() {
+    public List<@NotNull Long> getOrganizationIds() {
         return organizationIds;
     }
 
@@ -380,7 +380,7 @@ public class UserSegmentObject {
      *
      * @param organizationIds property value to set
      */
-    public void setOrganizationIds(List<@NotNull Integer> organizationIds) {
+    public void setOrganizationIds(List<@NotNull Long> organizationIds) {
         this.organizationIds = organizationIds;
     }
 
@@ -389,7 +389,7 @@ public class UserSegmentObject {
      *
      * @return The same instance of UserSegmentObject for chaining.
      */
-    public UserSegmentObject organizationIds(List<@NotNull Integer> organizationIds) {
+    public UserSegmentObject organizationIds(List<@NotNull Long> organizationIds) {
         this.organizationIds = organizationIds;
         return this;
     }
@@ -398,7 +398,7 @@ public class UserSegmentObject {
      *
      * @return The same instance of UserSegmentObject for chaining.
      */
-    public UserSegmentObject addOrganizationIdsItem(Integer organizationIdsItem) {
+    public UserSegmentObject addOrganizationIdsItem(Long organizationIdsItem) {
         if (organizationIds == null) {
             organizationIds = new ArrayList<>();
         }
