@@ -2818,7 +2818,7 @@ paths:
               examples:
                 default:
                   $ref: '#/components/examples/UserSegmentsResponseExample'
-    post:
+    post: # This is inaccurate. response from api is `received HTTP error response: Required parameter missing: user_segment`
       operationId: CreateUserSegment
       tags:
         - User Segments
@@ -4197,21 +4197,21 @@ components:
     UserSegmentObject:
       type: object
       description: |
-        The `user_type` attribute takes one of the following values:
+The `user_type` attribute takes one of the following values:
 
-        | Value               | Users                                |
-        |---------------------|--------------------------------------|
-        | signed_in_users     | only authenticated users             |
-        | staff               | only agents and Help Center managers |
+| Value               | Users                                |
+|---------------------|--------------------------------------|
+| signed_in_users     | only authenticated users             |
+| staff               | only agents and Help Center managers |
 
 
-        For `group_ids`, `organization_ids`, `tags`, and `or_tags`,
-        an empty array means that access is not restricted by the attribute. For example,
-        if no group ids are specified, then users don't have to be in any specific group to
-        have access.
+For `group_ids`, `organization_ids`, `tags`, and `or_tags`,
+an empty array means that access is not restricted by the attribute. For example,
+if no group ids are specified, then users don't have to be in any specific group to
+have access.
 
-        For `tags`, a user must have all the listed tags to have access. For `or_tags`, a
-        user must have at least one of the listed tags to have access.
+For `tags`, a user must have all the listed tags to have access. For `or_tags`, a
+user must have at least one of the listed tags to have access.
       properties:
         added_user_ids:
           type: array

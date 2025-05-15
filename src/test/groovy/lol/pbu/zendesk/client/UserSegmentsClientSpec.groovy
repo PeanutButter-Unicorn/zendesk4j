@@ -2,6 +2,7 @@ package lol.pbu.zendesk.client
 
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
 import jakarta.inject.Inject
+import lol.pbu.zendesk.model.UserSegmentObject
 import spock.lang.Shared
 import spock.lang.Specification
 
@@ -27,5 +28,22 @@ class UserSegmentsClientSpec extends Specification {
         null         | _
         true         | _
         false        | _
+    }
+
+    def "can create user segment for #userSegmentString"() {
+        when:
+        def userSegment = new UserSegmentObject(userSegmentString)
+        def response = userSegmentsClient.createUserSegment(userSegment)
+
+        then:
+        noExceptionThrown()
+
+        and:
+        response.block().body() != null
+
+        where:
+        userSegmentString | _
+        "signed_in_users" | _
+        "staff"           | _
     }
 }

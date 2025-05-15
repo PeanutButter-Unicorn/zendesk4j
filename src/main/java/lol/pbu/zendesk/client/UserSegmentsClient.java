@@ -1,21 +1,20 @@
 package lol.pbu.zendesk.client;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.micronaut.core.annotation.Nullable;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.annotation.*;
 import io.micronaut.http.client.annotation.Client;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import lol.pbu.zendesk.model.SectionsResponse;
-import lol.pbu.zendesk.model.TopicsResponse;
-import lol.pbu.zendesk.model.UserSegmentResponse;
-import lol.pbu.zendesk.model.UserSegmentsResponse;
+import lol.pbu.zendesk.model.*;
 import reactor.core.publisher.Mono;
 
 import static io.micronaut.http.HttpHeaders.ACCEPT;
 
 /**
  * See <a href="https://developer.zendesk.com/api-reference/help_center/help-center-api/user_segments/">User Segments</a>
+ *
  * @author Jonathan Zollinger
  * @since 0.0.1
  */
@@ -25,16 +24,15 @@ public interface UserSegmentsClient {
 
     /**
      * Create User Segment<br>
-     * <h4>Allowed for</h4>
-     * <ul>
-     * <li>Help Center managers</li>
-     * </ul>
+     * Allowed for Help Center managers
      *
      * @return Created response (status code 201)
      * or Bad request response (status code 400)
      */
     @Post("/api/v2/help_center/user_segments")
-    Mono<HttpResponse<@Valid UserSegmentResponse>> createUserSegment();
+    Mono<HttpResponse<@Valid UserSegmentResponse>> createUserSegment(
+            @JsonProperty("user_segment") @Body @NotNull UserSegmentObject userSegment
+    );
 
     /**
      * Delete User Segment<br>
@@ -69,7 +67,6 @@ public interface UserSegmentsClient {
      * <ul>
      * <li>Help Center managers  </li></ul>
      *
-     *
      * @param userSegmentId The unique ID of the user segment
      * @return OK Response (status code 200)
      */
@@ -91,8 +88,7 @@ public interface UserSegmentsClient {
      * <li>Help Center managers</li>
      * <li>Agents</li></ul>
      *
-     *
-     * @param builtIn Only built_in user segments if true, only custom user segments if false 
+     * @param builtIn Only built_in user segments if true, only custom user segments if false
      * @return OK response (status code 200)
      */
     @Get("/api/v2/help_center/user_segments")

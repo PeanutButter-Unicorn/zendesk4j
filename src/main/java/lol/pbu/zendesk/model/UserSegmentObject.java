@@ -10,10 +10,35 @@ import jakarta.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 /**
- * The &#x60;user_type&#x60; attribute takes one of the following values:  | Value               | Users                                | |---------------------|--------------------------------------| | signed_in_users     | only authenticated users             | | staff               | only agents and Help Center managers |   For &#x60;group_ids&#x60;, &#x60;organization_ids&#x60;, &#x60;tags&#x60;, and &#x60;or_tags&#x60;, an empty array means that access is not restricted by the attribute. For example, if no group ids are specified, then users don&#39;t have to be in any specific group to have access.  For &#x60;tags&#x60;, a user must have all the listed tags to have access. For &#x60;or_tags&#x60;, a user must have at least one of the listed tags to have access.
- * 
+ * <p>The <code>user_type</code> attribute takes one of the following values:</p>
+ * <table>
+ *   <thead>
+ *   <tr>
+ *     <th>Value</th>
+ *     <th>Users</th>
+ *   </tr>
+ *   </thead>
+ *   <tbody>
+ *   <tr>
+ *     <td>signed_in_users</td>
+ *     <td>only authenticated users</td>
+ *   </tr>
+ *   <tr>
+ *     <td>staff</td>
+ *     <td>only agents and Help Center managers</td>
+ *   </tr>
+ *   </tbody>
+ * </table>
+ * <p>For <code>group_ids</code>, <code>organization_ids</code>, <code>tags</code>, and <code>or_tags</code>,
+ *   an empty array means that access is not restricted by the attribute. For example,
+ *   if no group ids are specified, then users don&#39;t have to be in any specific group to
+ *   have access.</p>
+ * <p>For <code>tags</code>, a user must have all the listed tags to have access. For <code>or_tags</code>, a
+ *   user must have at least one of the listed tags to have access.</p>
+ *
  * @author Jonathan Zollinger
  * @since 0.0.1
  */
@@ -133,7 +158,7 @@ public class UserSegmentObject {
     private String updatedAt;
 
     public UserSegmentObject(String userType) {
-        this.userType = userType;
+        setUserType(userType);
     }
 
     /**
@@ -151,7 +176,10 @@ public class UserSegmentObject {
      * @param userType property value to set
      */
     public void setUserType(String userType) {
-        this.userType = userType;
+        if (Stream.of("signed_in_users", "staff").noneMatch(userType::equalsIgnoreCase)) {
+            throw new IllegalArgumentException("`userType` can only be \"signed_in_users\" or \"staff\". received: " + userType);
+        }
+        this.userType = userType.toLowerCase();
     }
 
     /**
@@ -160,7 +188,7 @@ public class UserSegmentObject {
      * @return The same instance of UserSegmentObject for chaining.
      */
     public UserSegmentObject userType(String userType) {
-        this.userType = userType;
+        setUserType(userType);
         return this;
     }
 
@@ -191,6 +219,7 @@ public class UserSegmentObject {
         this.addedUserIds = addedUserIds;
         return this;
     }
+
     /**
      * Add an item to the addedUserIds property in a chainable fashion.
      *
@@ -267,6 +296,7 @@ public class UserSegmentObject {
         this.groupIds = groupIds;
         return this;
     }
+
     /**
      * Add an item to the groupIds property in a chainable fashion.
      *
@@ -353,6 +383,7 @@ public class UserSegmentObject {
         this.orTags = orTags;
         return this;
     }
+
     /**
      * Add an item to the orTags property in a chainable fashion.
      *
@@ -393,6 +424,7 @@ public class UserSegmentObject {
         this.organizationIds = organizationIds;
         return this;
     }
+
     /**
      * Add an item to the organizationIds property in a chainable fashion.
      *
@@ -433,6 +465,7 @@ public class UserSegmentObject {
         this.tags = tags;
         return this;
     }
+
     /**
      * Add an item to the tags property in a chainable fashion.
      *
@@ -474,16 +507,16 @@ public class UserSegmentObject {
         }
         var userSegmentObject = (UserSegmentObject) o;
         return Objects.equals(userType, userSegmentObject.userType)
-            && Objects.equals(addedUserIds, userSegmentObject.addedUserIds)
-            && Objects.equals(builtIn, userSegmentObject.builtIn)
-            && Objects.equals(createdAt, userSegmentObject.createdAt)
-            && Objects.equals(groupIds, userSegmentObject.groupIds)
-            && Objects.equals(id, userSegmentObject.id)
-            && Objects.equals(name, userSegmentObject.name)
-            && Objects.equals(orTags, userSegmentObject.orTags)
-            && Objects.equals(organizationIds, userSegmentObject.organizationIds)
-            && Objects.equals(tags, userSegmentObject.tags)
-            && Objects.equals(updatedAt, userSegmentObject.updatedAt);
+                && Objects.equals(addedUserIds, userSegmentObject.addedUserIds)
+                && Objects.equals(builtIn, userSegmentObject.builtIn)
+                && Objects.equals(createdAt, userSegmentObject.createdAt)
+                && Objects.equals(groupIds, userSegmentObject.groupIds)
+                && Objects.equals(id, userSegmentObject.id)
+                && Objects.equals(name, userSegmentObject.name)
+                && Objects.equals(orTags, userSegmentObject.orTags)
+                && Objects.equals(organizationIds, userSegmentObject.organizationIds)
+                && Objects.equals(tags, userSegmentObject.tags)
+                && Objects.equals(updatedAt, userSegmentObject.updatedAt);
     }
 
     @Override
@@ -494,18 +527,18 @@ public class UserSegmentObject {
     @Override
     public String toString() {
         return "UserSegmentObject("
-            + "userType: " + getUserType() + ", "
-            + "addedUserIds: " + getAddedUserIds() + ", "
-            + "builtIn: " + getBuiltIn() + ", "
-            + "createdAt: " + getCreatedAt() + ", "
-            + "groupIds: " + getGroupIds() + ", "
-            + "id: " + getId() + ", "
-            + "name: " + getName() + ", "
-            + "orTags: " + getOrTags() + ", "
-            + "organizationIds: " + getOrganizationIds() + ", "
-            + "tags: " + getTags() + ", "
-            + "updatedAt: " + getUpdatedAt()
-            + ")";
+                + "userType: " + getUserType() + ", "
+                + "addedUserIds: " + getAddedUserIds() + ", "
+                + "builtIn: " + getBuiltIn() + ", "
+                + "createdAt: " + getCreatedAt() + ", "
+                + "groupIds: " + getGroupIds() + ", "
+                + "id: " + getId() + ", "
+                + "name: " + getName() + ", "
+                + "orTags: " + getOrTags() + ", "
+                + "organizationIds: " + getOrganizationIds() + ", "
+                + "tags: " + getTags() + ", "
+                + "updatedAt: " + getUpdatedAt()
+                + ")";
     }
 
 }
