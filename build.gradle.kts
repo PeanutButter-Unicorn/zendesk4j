@@ -6,7 +6,7 @@ plugins {
     id("io.micronaut.aot") version "4.5.3"
 }
 
-version = project.properties["zendesk4jVersion"]!!
+version = project.properties["z4jVersion"]!!
 group = "lol.pbu"
 
 apply(from = "gradle/asciidoc.gradle")
@@ -18,14 +18,11 @@ dependencies {
     annotationProcessor("io.micronaut.validation:micronaut-validation-processor")
     implementation("io.micronaut.reactor:micronaut-reactor-http-client")
     implementation("io.micronaut:micronaut-http-client")
-    implementation("io.micronaut.data:micronaut-data-jdbc")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
-    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
     implementation("org.slf4j:jul-to-slf4j")
     implementation("io.micronaut.validation:micronaut-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-    runtimeOnly("com.h2database:h2")
     runtimeOnly("org.yaml:snakeyaml")
     testImplementation("org.testcontainers:spock")
     testImplementation("org.testcontainers:testcontainers")
@@ -37,7 +34,7 @@ application {
     mainClass = "lol.pbu.Application"
 }
 java {
-    sourceCompatibility = JavaVersion.toVersion("17")
+    sourceCompatibility = JavaVersion.toVersion("17") // graalvm-ce
 }
 
 fun loadEnv() {

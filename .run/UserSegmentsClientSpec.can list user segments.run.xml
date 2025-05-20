@@ -19,7 +19,7 @@
         <list>
           <option value=":test" />
           <option value="--tests" />
-          <option value="&quot;lol.pbu.zendesk.client.UserSegmentsClientSpec.can list user segments&quot;" />
+          <option value="&quot;lol.pbu.z4j.client.UserSegmentsClientSpec.can list user segments&quot;" />
         </list>
       </option>
       <option name="vmOptions" />
