@@ -20,7 +20,7 @@ import static io.micronaut.http.MediaType.APPLICATION_JSON;
  * @since 0.0.1
  */
 @Header(name = ACCEPT, value = "application/json")
-@Client("${micronaut.http.services.z4j.url}")
+@Client("${micronaut.http.services.zendesk.url}")
 public interface UserSegmentsClient {
 
     /**
