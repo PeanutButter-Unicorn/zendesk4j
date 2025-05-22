@@ -47,6 +47,7 @@ fun loadEnv() {
 
 tasks.withType<Test> {
     loadEnv()
+    useJUnitPlatform()
 }
 
 micronaut {

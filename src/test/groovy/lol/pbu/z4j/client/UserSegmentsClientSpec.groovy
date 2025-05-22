@@ -35,6 +35,55 @@ class UserSegmentsClientSpec extends Specification {
         false        | _
     }
 
+    def "test the listUserSegmentTopics function"() {
+        when:
+        //create a user id to use to test with
+        def userSegment = new UserSegmentObject(userSegmentString as String, userSegmentName as String);
+        def createResponse = userSegmentsClient.createUserSegment(userSegment);
+
+        then: "received expected 201 response"
+        createResponse.status() == HttpStatus.CREATED;
+
+        and:
+        Long id = createResponse.body().userSegment.id;
+
+        then: "test the response from the listUserSegmentTopics method"
+        def response = userSegmentsClient.listUserSegmentTopics(id);
+        and:
+        response.status() == HttpStatus.OK;
+
+        //collect the variables
+        where:
+        [userSegmentString, userSegmentName, updatedUserSegmentName] << userSegmentScenarios.collect {
+            [it.segmentType, it.name, it.updatedName]
+        }
+    }
+
+    def "test the listUserSegmentSections function"(){
+        when:
+        //create a user id to use to test with
+        //create a function to produce a user id separately
+        def userSegment = new UserSegmentObject(userSegmentString as String, userSegmentName as String);
+        def createResponse = userSegmentsClient.createUserSegment(userSegment);
+
+        then: "received expected 201 response"
+        createResponse.status() == HttpStatus.CREATED;
+
+        and:
+        Long id = createResponse.body().userSegment.id;
+
+        then: "test the response from the listUserSegmentSections method"
+        def response = userSegmentsClient.listUserSegmentSections(id);
+        and:
+        response.status() == HttpStatus.OK;
+
+        //collect the variables
+        where:
+        [userSegmentString, userSegmentName, updatedUserSegmentName] << userSegmentScenarios.collect {
+            [it.segmentType, it.name, it.updatedName]
+        }
+    }
+
     def "can create user segments and delete them for #userSegmentString"() {
         when: "create user segment for #userSegmentString and named #userSegmentName"
         def userSegment = new UserSegmentObject(userSegmentString as String, userSegmentName as String)
